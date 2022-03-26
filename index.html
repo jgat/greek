@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="google" content="notranslate">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Greek Translation Quiz</title>
+<link rel="stylesheet" href="style.css">
+<script type="module" src="quiz.js"></script>
+</head>
+<body>
+
+<h1>Greek Translation Quiz</h1>
+
+<div><span class="instruction">Consider the following Greek text:</span>
+
+<div id="verse-text" class="greek">Text not available. Javascript might not be working?</div>
+
+<div>
+<ol id="parsing-questions"></ol>
+</div>
+
+<div><span class="question">Translate the text:</span></div>
+
+<div><textarea name="translation" id="translation-input" cols=50 rows=3></textarea></div>
+
+<div><button id="answer-button" type="button">Show Answers</button></div>
+<div id="answer" style="display:none">
+  <div>
+  <ol id="parsing-answers"></ol>
+  </div>
+  <div>See translations of <span id="verse-ref">{verse}</span> in Bible Hub:
+  <ul>
+  <li><a id="translation-link1" target="_blank">Word-by-word</a></li>
+  <li><a id="translation-link2" target="_blank">All translations</a></li>
+  </ul>
+  </div>
+  <!--<iframe src="https://www.biblegateway.com/passage/?search=Acts 13:30&version=NASB&interface=print"></iframe>-->
+</div>
+
+</body>
+</html>

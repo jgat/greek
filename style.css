@@ -1,0 +1,42 @@
+body {
+  font-family: "Arial", sans-serif;
+  font-size: 14pt;
+  margin: 16px 16px 16px 16px;
+}
+
+.greek {
+  font-family: "Times New Roman", Times, serif;
+  font-size: 1.1em;
+}
+
+#parsing-questions li, #parsing-answers li {
+  margin-top: 1em;
+  margin-bottom: 1.5em;
+}
+
+#parsing-answers .answer {
+  color: maroon;
+}
+
+#verse-text {
+  margin: 1em 0 1em 0.75em;
+  font-size: 1.4em;
+}
+
+#translation-input {
+  margin: 0.5em 0.5em 0.5em 0.5em;
+  max-width: 92%;
+  font-size: 1em;
+}
+
+#answer {
+  margin: 0.5em 1% 0.5em 1%;
+  border: 1px solid maroon;
+  padding: 0.5em 1% 0.5em 1%;
+  width: 95%;
+}
+
+input, textarea {
+  font-family: "Arial", sans-serif;
+  font-size: 14pt;
+}
