@@ -35,6 +35,9 @@ class Quiz {
       if (this.verse.words.filter(w => normalise(w[0]).toLowerCase() == qere.toLowerCase()).length > 1) {
         continue;  // word is not unique in the verse
       }
+      if (this.verse.extra.filter(e => e.term == word[0]).length > 0) {
+        continue;  // word is not in known vocab
+      }
       let typesToAsk = ['case', 'number', 'gender', 'tense', 'mood', 'person'];  // TODO: add voice
       typesToAsk = Object.keys(morph).filter(k => typesToAsk.includes(k));
       if (typesToAsk.length == 0) {
@@ -55,6 +58,15 @@ class Quiz {
     document.getElementById("verse-ref").innerHTML = this.verse.ref;
     document.getElementById("translation-link1").href = "https://biblemenus.com/searchgreekheb.php?q=" + this.verse.ref;
     document.getElementById("translation-link2").href = "https://biblemenus.com/search.php?q=" + this.verse.ref;
+
+    if (this.verse.extra.length > 0) {
+      document.getElementById("extra-vocab").innerHTML = ("Extra vocab:<ul class=\"vocab\">"
+      + this.verse.extra.map(e => "<li>" + e.dom() + "</li>").join('\n')
+      + "</ul>");
+    } else {
+      document.getElementById("extra-vocab").innerHTML = "";
+    }
+
     const questionsHtml = this.questions.map(
       q => ("<li><span class=\"question\">What " + q[0] + " is <span class=\"greek\">" + q[1] + "</span>?</span><br /><input type=\"text\"></input></li>")
     ).join('\n');

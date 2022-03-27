@@ -9,6 +9,10 @@ body {
   font-size: 1.1em;
 }
 
+#extra-vocab {
+  margin-bottom: 3em;
+}
+
 li {
   margin-top: 1em;
   margin-bottom: 1.5em;
