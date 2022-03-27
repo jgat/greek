@@ -28,7 +28,7 @@ class Quiz {
 
   chooseParsingQuestions() {
     const questions = [];
-    while (questions.length < 5) {
+    for (let i = 0; i < 100 && questions.length < 5; i++) {
       const word = randomElement(this.verse.words);
       const qere = normalise(word[0]);
       const morph = word[1];
