@@ -9,7 +9,7 @@ body {
   font-size: 1.1em;
 }
 
-#parsing-questions li, #parsing-answers li {
+li {
   margin-top: 1em;
   margin-bottom: 1.5em;
 }
@@ -39,4 +39,8 @@ body {
 input, textarea {
   font-family: "Arial", sans-serif;
   font-size: 14pt;
+}
+
+.footer {
+  font-size: 12pt;
 }

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="google" content="notranslate">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Greek Translation Quiz</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<h1>Greek Translation Quiz</h1>
+
+<a href="./">Back</a>
+
+<h2>About</h2>
+
+<div>
+<p>
+This is a little project I made for learning New Testament Greek, meant to
+mimic some of the questions set in class. I've selected a number of verses
+which should be (mostly) translatable; this webpage picks one at random, and
+asks for some of the parsing and then asks for a translation.
+</p>
+
+<p><strong>Notes/Caveats</strong>:</p>
+<ul>
+<li>
+Verses are taken from <a href="https://en.wikipedia.org/wiki/Editio_Octava_Critica_Maior">Tischendorf's
+8th edition</a> of the Greek New Testament, published in the late 19th century.
+It can differ slightly from modern editions (e.g. Luke 6:5 has an extra
+<span class="greek">"καὶ"</span>, and Mark 1:1 is missing <span class="greek">"υἱοῦ
+θεοῦ"</span>). If you're not sure, look up the verse in your UBS5.
+</li>
+
+<li>Some parsing might be ambiguous because I've pulled a single verse out of
+context (e.g. <span class="greek">αὐτοῦ</span> might refer to someone or something
+named in the previous verse, without which we can't tell if the gender is
+masculine or neuter). I can't really fix this.</li>
+
+<li>There might be some words which are not in the assigned vocab, but you can
+probably guess what they mean. I've mostly done this for names of people and
+places (e.g. <span class="greek">Μαρία</span> is "Mary").</li>
+
+<li>There might be some words which don't fit into the paradigms we've been
+taught (e.g. <span class="greek">ἤγειρα</span> is the aorist of
+<span class="greek">ἐγείρω</span>, but the stem isn't what you'd expect).
+I don't have a way to detect that we haven't learned this.</li>
+</ul>
+
+<p><strong>How did you make this?</strong></p>
+
+<p>I started with an existing set of
+<a href="https://github.com/morphgnt/tischendorf-data/tree/master/word-per-line/2.8">morphology data</a>
+for every word in the Tischendorf Greek New Testament, and matched that against
+both the assigned vocab list for our course (which is helpfully already in a
+clean spreadsheet format), and the lesson plan for different word forms (to
+account for the fact that, for example, we learn the present active indicative
+of verbs long before we learn the aorist passive participle of those same
+verbs). I can use that to compute, for each word in the GNT, which lesson number
+that word becomes accessible to learn (or that the word is not learned in this
+course).</p>
+
+<p>I can then group words together into verses, and pick out verses where, for
+every word in that verse, the word's "lesson number" is less than some set
+number (I use the lesson we are currently up to). I can also include verses
+where all but one word matches this criterion, to get a set of verses which are
+"mostly translatable", except for that one word.</p>
+
+<p>I put all of those "mostly translatable" verses into
+<a href="https://github.com/jgat/greek/blob/gh-pages/verses.js">this javascript file</a>,
+and built this little website around it. The site picks one verse at random,
+then picks 5 random questions about words' case/gender/number/person/tense/mood/voice.</p>
+
+<p>At no point does this site check your answers or save your answers or
+anything.</p>
+
+<p>All up, this took me about a weekend to make. A lot of that was because I'd
+forgotten how to do HTML and CSS properly.</p>
+</div>
+
+</body>
+</html>
