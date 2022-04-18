@@ -38,7 +38,7 @@ class Quiz {
       if (this.verse.extra.filter(e => e.term == word[0]).length > 0) {
         continue;  // word is not in known vocab
       }
-      let typesToAsk = ['case', 'number', 'gender', 'tense', 'mood', 'person'];  // TODO: add voice
+      let typesToAsk = ['case', 'number', 'gender', 'tense', 'mood', 'person', 'voice'];
       typesToAsk = Object.keys(morph).filter(k => typesToAsk.includes(k));
       if (typesToAsk.length == 0) {
         continue;
