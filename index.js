@@ -1,6 +1,7 @@
 import { VERSES } from "./verses.js";
 
 function listVerses() {
+  VERSES.sort((a, b) => (b.lesson - a.lesson));
   let html = '';
   let lesson = -1;
   for (let i = 0; i < VERSES.length; i++) {
