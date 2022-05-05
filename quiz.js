@@ -16,8 +16,24 @@ class Quiz {
     this.questions = [];
   }
 
+  chooseVerse() {
+    // If a verse is specified in the URL params, choose it.
+    const ref = new URLSearchParams(window.location.search).get('v');
+    if (ref != null) {
+      for (let i = 0; i < VERSES.length; i++) {
+        if (VERSES[i].ref == ref) {
+          return VERSES[i]
+        }
+      }
+    }
+
+    // Otherwise, choose a verse at random. (It will be added to the URL params
+    // later.)
+    return randomElement(VERSES);
+  }
+
   chooseQuestion() {
-    this.verse = randomElement(VERSES);
+    this.verse = this.chooseVerse();
     console.log(this.verse.ref);
     console.log(this.verse.text);
     console.log(this.verse.words);
@@ -54,6 +70,8 @@ class Quiz {
   }
 
   setDom() {
+    window.history.pushState(quiz.verse, quiz.verse.ref, '?v=' + quiz.verse.ref)
+
     document.getElementById("verse-text").innerHTML = this.verse.text;
     document.getElementById("verse-ref").innerHTML = this.verse.ref;
     document.getElementById("translation-link1").href = "https://biblemenus.com/searchgreekheb.php?q=" + this.verse.ref;
