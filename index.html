@@ -4,41 +4,21 @@
 <meta charset="UTF-8">
 <meta name="google" content="notranslate">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Greek Translation Quiz</title>
+<title>Index | Greek Translation Quiz</title>
 <link rel="stylesheet" href="style.css">
-<script type="module" src="quiz.js"></script>
+<script type="module" src="index.js"></script>
 </head>
 <body>
 
 <h1>Greek Translation Quiz</h1>
 
-<p class="small"><a href=".">New Random Quiz</a> | <a href="./index/">Index</a> | <a href="about.html">About</a></p>
+<p class="small"><strong>Index</strong> | <a href="./quiz/">Random</a> | <a href="about.html">About</a></p>
 
-<div><span class="instruction">Consider the following Greek text:</span></div>
-
-<div id="verse-text" class="greek">Loading...</div>
-
-<div id="extra-vocab"></div>
+<p>Here is a list of all passages you can test yourself on. The lesson number
+indicates that you should know vocab and paradigms up to this lesson.</p>
 
 <div>
-<ol id="parsing-questions"></ol>
-</div>
-
-<div><span class="question">Translate the text:</span></div>
-
-<div><textarea name="translation" id="translation-input" cols=50 rows=3></textarea></div>
-
-<div><button id="answer-button" type="button">Show Answers</button></div>
-<div id="answer" style="display:none">
-  <div>
-  <ol id="parsing-answers"></ol>
-  </div>
-  <div>See translations of <span id="verse-ref">{verse}</span> in Bible Hub:
-  <ul>
-  <li><a id="translation-link1" target="_blank">Word-by-word</a></li>
-  <li><a id="translation-link2" target="_blank">All translations</a></li>
-  </ul>
-  </div>
+<ul id="quiz-list"></ul>
 </div>
 
 </body>

@@ -1,4 +1,4 @@
-import { VERSES } from "./verses.js";
+import { VERSES } from "../verses.js";
 
 export { quiz };
 
