@@ -1,7 +1,7 @@
 import { VERSES } from "./verses.js";
 
 function listVerses() {
-  VERSES.sort((a, b) => (b.lesson - a.lesson));
+  VERSES.sort((a, b) => (a.lesson - b.lesson));
   let html = '';
   let lesson = -1;
   for (let i = 0; i < VERSES.length; i++) {
@@ -9,6 +9,9 @@ function listVerses() {
     if (verse.lesson != lesson) {
       if (lesson > 0) {
         html += '</ul></li>\n';
+      }
+      if (lesson == 43) { // End of first semester
+        html += '<hr/>';
       }
       html += '<li>Lesson ' + verse.lesson + ':<ul>\n';
       lesson = verse.lesson;
